@@ -1,0 +1,3 @@
+spring:
+  kafka:
+    bootstrap-servers: application-kafka-bootstrap.kafka:9092
