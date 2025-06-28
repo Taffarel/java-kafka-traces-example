@@ -17,7 +17,7 @@ public class RandomPriceGenerator {
     private static final Logger logger = LoggerFactory.getLogger(RandomPriceGenerator.class);
     private final Random random = new Random();
     private final Tracer tracer;
-    private final String[] underlyings = {"AAPL", "TSLA", "TLT", "VIX", "RUT"};
+    private final String[] underlyings = {"AAPL", "TSLA", "TLT", "VIX", "RUT", "NVDA"};
 
     public RandomPriceGenerator(Tracer tracer) {
         this.tracer = tracer;
@@ -33,9 +33,10 @@ public class RandomPriceGenerator {
             double high = open + (random.nextDouble() * 5);
             double low = open - (random.nextDouble() * 5);
             double close = low + (random.nextDouble() * (high - low));
+            int volume = random.nextInt() * 1000;
             
             PriceAction priceAction = new PriceActionImpl(
-                open, close, high, low, LocalDateTime.now(), underlying
+                open, close, high, low, volume, LocalDateTime.now(), underlying
             );
             
             span.setAttribute("underlying", underlying);

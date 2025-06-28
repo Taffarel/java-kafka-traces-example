@@ -7,6 +7,7 @@ public interface PriceAction {
     double getClose();
     double getHigh();
     double getLow();
+    int getVolume();
     LocalDateTime getDate();
     String getUnderlying();
 }
