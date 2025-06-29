@@ -79,10 +79,11 @@ public class PriceActionService {
                 double close = node.get("close").asDouble();
                 double high = node.get("high").asDouble();
                 double low = node.get("low").asDouble();
+                int volume = node.get("volume").asInt();
                 LocalDateTime date = LocalDateTime.parse(node.get("date").asText());
                 String underlying = node.get("underlying").asText();
 
-                return new PriceActionImpl(open, close, high, low, date, underlying);
+                return new PriceActionImpl(open, close, high, low, volume, date, underlying);
             }
         });
         mapper.registerModule(module);
