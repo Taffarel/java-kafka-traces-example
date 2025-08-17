@@ -17,7 +17,7 @@ public class App {
         PriceActionService service = new PriceActionService(producerClient, priceGenerator, tracer);
 
         // Produce some price actions
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
             service.producePriceAction();
             try {
                 Thread.sleep(1000); // Wait 1 second between productions

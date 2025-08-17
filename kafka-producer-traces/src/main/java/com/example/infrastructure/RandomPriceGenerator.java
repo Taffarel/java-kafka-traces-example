@@ -17,7 +17,7 @@ public class RandomPriceGenerator {
     private static final Logger logger = LoggerFactory.getLogger(RandomPriceGenerator.class);
     private final Random random = new Random();
     private final Tracer tracer;
-    private final String[] underlyings = {"AAPL", "TSLA", "TLT", "VIX", "RUT", "NVDA"};
+    private final String[] underlyings = {"NVDA"};
 
     public RandomPriceGenerator(Tracer tracer) {
         this.tracer = tracer;
